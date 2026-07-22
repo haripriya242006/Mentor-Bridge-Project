@@ -1,0 +1,25 @@
+/* Import Core UI stylesheets */
+@import url('./styles/theme.css');
+@import url('./styles/layout.css');
+@import url('./styles/sidebar.css');
+@import url('./styles/navbar.css');
+@import url('./styles/cards.css');
+@import url('./styles/buttons.css');
+@import url('./styles/forms.css');
+@import url('./styles/chat.css');
+@import url('./styles/dashboard.css');
+@import url('./styles/responsive.css');
+@import url('./App.css');
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--background);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}

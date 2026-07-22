@@ -1,0 +1,98 @@
+/* Layout Container */
+.layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--background);
+  font-family: var(--font-family);
+  color: var(--text-dark);
+}
+
+/* Sidebar */
+.sidebarWrapper {
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.sidebarOpen {
+  width: 280px;
+}
+
+.sidebarCollapsed {
+  width: 80px;
+}
+
+/* Main Content Area */
+.mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Navbar */
+.navbar {
+  flex-shrink: 0;
+  height: 70px;
+  border-bottom: 1px solid var(--border-light);
+  background-color: var(--card-bg);
+}
+
+/* Content Area */
+.contentArea {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--spacing-2xl);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebarOpen {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 70px;
+    height: calc(100vh - 70px);
+    z-index: 999;
+    box-shadow: var(--shadow-lg);
+    overflow-y: auto;
+  }
+
+  .sidebarCollapsed {
+    width: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .contentArea {
+    padding: var(--spacing-lg);
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .contentArea {
+    padding: var(--spacing-md);
+  }
+}
+
+/* Scrollbar Styling */
+.contentArea::-webkit-scrollbar {
+  width: 8px;
+}
+
+.contentArea::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+.contentArea::-webkit-scrollbar-thumb {
+  background: var(--border-light);
+  border-radius: 4px;
+}
+
+.contentArea::-webkit-scrollbar-thumb:hover {
+  background: var(--text-tertiary);
+}

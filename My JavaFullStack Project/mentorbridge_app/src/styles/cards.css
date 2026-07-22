@@ -1,0 +1,333 @@
+/* ==========================================================================
+   CARDS.CSS - Dashboard Widgets, Tables, Badges, and Feedback Components
+   ========================================================================== */
+
+/* Standard Card */
+.card, .section-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover, .section-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-focus);
+}
+
+.card-header, .section-header {
+  padding: var(--spacing-lg) var(--spacing-lg) var(--spacing-md);
+  background-color: transparent;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.card-body, .section-body {
+  padding: var(--spacing-lg);
+  flex: 1;
+}
+
+.card-title, .section-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+}
+
+.card-subtitle, .section-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* Mentor Cards */
+.mentor-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition);
+  padding: var(--spacing-lg);
+  gap: var(--spacing-md);
+  position: relative;
+}
+
+.mentor-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-focus);
+}
+
+.mentor-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mentor-card-avatar {
+  width: 54px;
+  height: 54px;
+  border-radius: var(--radius-md);
+  background-color: var(--primary-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  border: 1px solid var(--border);
+}
+
+.mentor-card-rating {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  background-color: var(--warning-light);
+  color: var(--warning-text);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.mentor-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.mentor-card-name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.mentor-card-company {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.mentor-card-meta {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-sm);
+  background-color: var(--secondary-light);
+  padding: 0.625rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+}
+
+.mentor-meta-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.mentor-meta-label {
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.mentor-meta-value {
+  color: var(--text-main);
+  font-weight: 600;
+  margin-top: 1px;
+}
+
+.mentor-card-skills {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.mentor-skills-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.mentor-skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+}
+
+.skill-badge {
+  background-color: var(--primary-light);
+  color: var(--primary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+}
+
+.mentor-card-footer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-xs);
+  margin-top: var(--spacing-xs);
+}
+
+.mentor-card-footer .btn-ghost {
+  grid-column: span 2;
+}
+
+/* Status Badges */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.625rem;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+}
+
+.status-approved, .status-completed, .status-success {
+  background-color: var(--success-light);
+  color: var(--success-text);
+}
+
+.status-pending {
+  background-color: var(--warning-light);
+  color: var(--warning-text);
+}
+
+.status-rejected, .status-failed, .status-cancelled {
+  background-color: var(--danger-light);
+  color: var(--danger-text);
+}
+
+/* Empty States */
+.empty-state-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--spacing-2xl) var(--spacing-xl);
+  background-color: var(--card-bg);
+  border: 1.5px dashed var(--border);
+  border-radius: var(--radius);
+  gap: var(--spacing-sm);
+}
+
+.empty-state-icon {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.empty-state-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.empty-state-description {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  max-width: 320px;
+}
+
+.empty-state-action {
+  margin-top: var(--spacing-sm);
+}
+
+/* Data Tables */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.875rem;
+  background-color: var(--card-bg);
+}
+
+.data-table th {
+  background-color: var(--secondary-light);
+  color: var(--text-secondary);
+  font-weight: 600;
+  padding: 0.75rem var(--spacing-md);
+  border-bottom: 1px solid var(--border);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.data-table td {
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--border);
+  color: var(--text-main);
+  vertical-align: middle;
+}
+
+.data-table tr:last-child td {
+  border-bottom: none;
+}
+
+.data-table tr:hover td {
+  background-color: var(--secondary-light);
+}
+
+/* Alert Boxes */
+.alert {
+  display: flex;
+  align-items: flex-start;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border);
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  font-size: 0.9rem;
+  animation: fadeIn var(--transition-fast);
+}
+
+.alert-success {
+  background-color: var(--success-light);
+  border-color: rgba(16, 185, 129, 0.2);
+  color: var(--success-text);
+}
+
+.alert-danger {
+  background-color: var(--danger-light);
+  border-color: rgba(239, 68, 68, 0.2);
+  color: var(--danger-text);
+}
+
+.alert-warning {
+  background-color: var(--warning-light);
+  border-color: rgba(245, 158, 11, 0.2);
+  color: var(--warning-text);
+}
+
+.alert-info {
+  background-color: var(--info-light);
+  border-color: rgba(6, 182, 212, 0.2);
+  color: var(--info-text);
+}
